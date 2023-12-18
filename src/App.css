@@ -1,0 +1,202 @@
+
+body {
+  padding: 50px;
+  color: #f7f7f7;
+  min-height: 100vh;
+  background: #252525;
+  text-rendering: optimizeSpeed;
+  font-family: "Roboto", sans-serif;
+}
+
+.App {
+  padding: 1rem;
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background: #333;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px;
+}
+
+h1 {
+  font-weight: 300;
+  color: #44c0b6;
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.input-wrapper {
+  margin: 3.5rem;
+}
+
+.todos-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.input-wrapper input, .edit-todo-input{
+  width: 405px;
+  padding: 0.8em;
+}
+
+.input-wrapper input:focus, .edit-todo-input:focus{
+  outline: none;
+}
+
+.input-wrapper button , .edit-button, .delete-button{
+  width: 120px;
+  padding: 0.8em;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.input-wrapper input, button , .edit-button, .delete-button, .edit-todo-input{
+  font-size: 1em;
+  appearance: none;
+  color: currentcolor;
+  background: transparent;
+  border: 1px solid #828691;
+}
+
+.add-button {color: #44c0b6;}
+
+.delete-button { color: #fe6a6a;}
+.edit-button { color: #44c0b6;}
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0px;
+}
+
+li {
+  width: 400px;
+  padding: 0.85em;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  background: #494847;
+  letter-spacing: 0.02rem;
+  transition: all 0.3s ease-out;
+  border-left: 5px solid #cf972e;
+}
+
+li:last-child {
+  margin-bottom: 0px;
+}
+
+.empty {
+  font-size: 20px;
+  font-weight: 400;
+  color: #cf972e;
+  letter-spacing: 0.2rem;
+}
+
+
+.inp-cbx{
+  display: none;
+}
+
+.todo .cbx {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+.todo .cbx span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+.todo .cbx span:first-child {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transform: scale(1);
+  vertical-align: middle;
+  border: 1px solid #B9B8C3;
+  transition: all 0.2s ease;
+}
+.todo .cbx span:first-child svg {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  left: 6px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+.todo .cbx span:first-child:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #506EEC;
+  display: block;
+  transform: scale(0);
+  opacity: 1;
+  border-radius: 50%;
+  transition-delay: 0.2s;
+}
+.todo .cbx span:last-child {
+  margin-left: 8px;
+}
+.todo .cbx span:last-child:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: #B9B8C3;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+}
+.todo .cbx:hover span:first-child {
+  border-color: #3c53c7;
+}
+
+.todo .inp-cbx:checked + .cbx span:first-child {
+  border-color: #3c53c7;
+  background: #3c53c7;
+  animation: check-15 0.6s ease;
+}
+.todo .inp-cbx:checked + .cbx span:first-child svg {
+  stroke-dashoffset: 0;
+}
+.todo .inp-cbx:checked + .cbx span:first-child:before {
+  transform: scale(2.2);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+.todo .inp-cbx:checked + .cbx span:last-child {
+  color: #B9B8C3;
+  transition: all 0.3s ease;
+}
+.todo .inp-cbx:checked + .cbx span:last-child:after {
+  transform: scaleX(1);
+  transition: all 0.3s ease;
+}
+
+@keyframes check-15 {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+
+.edit-button svg {
+  fill: white;
+}
